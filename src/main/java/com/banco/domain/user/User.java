@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String firstName;
     private String LastName;
     @Column(unique = true)
