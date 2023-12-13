@@ -22,6 +22,7 @@ public class TransactionService {
     @Autowired
     private TransectionRepository repository;
 
+    @Autowired
     private RestTemplate restTemplate;
 
     public boolean authorizeTransaction(User sender, BigDecimal value) {

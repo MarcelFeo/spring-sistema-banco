@@ -1,5 +1,6 @@
 package com.banco.domain.user;
 
+import com.banco.dtos.UserDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,7 +18,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
-    private String LastName;
+    private String lastName;
     @Column(unique = true)
     private String document;
     @Column(unique = true)
@@ -26,4 +27,14 @@ public class User {
     private BigDecimal balance;
     @Enumerated(EnumType.STRING)
     private UserType userType;
+
+    public User(UserDto data) {
+        this.firstName = data.firstName();
+        this.lastName = data.lastName();
+        this.document = data.document();
+        this.balance = data.balance();
+        this.email = data.email();
+        this.password = data.password();
+        this.userType = data.userType();
+    }
 }

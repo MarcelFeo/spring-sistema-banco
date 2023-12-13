@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class NotificationService {
 
+    @Autowired
     private RestTemplate restTemplate;
 
     public void sendNotification(User user, String message) throws Exception {
